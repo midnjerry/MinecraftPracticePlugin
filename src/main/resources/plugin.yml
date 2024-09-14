@@ -1,0 +1,7 @@
+name: MinecraftPracticePlugin
+version: '1.0-SNAPSHOT'
+main: net.crusadergames.minecraft.plugins.practice.MinecraftPracticePlugin
+api-version: '1.21'
+authors: [ Jerry Balderas ]
+description: This is a sample Minecraft plugin for Spigot 1.21.1
+website: https://crusadergames.net
