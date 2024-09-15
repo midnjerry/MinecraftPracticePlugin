@@ -41,6 +41,26 @@
                     </execution>
                 </executions>
             </plugin>
+            <!-- Maven Antrun Plugin to copy the jar to the server plugins directory -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.8</version>
+                <executions>
+                    <execution>
+                        <phase>install</phase> <!-- Copy during the install phase -->
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <copy file="${project.build.directory}/${project.build.finalName}.jar"
+                                      todir="C:\Users\JERRY-PC\Desktop\Revelations_Server\Server\plugins"/>
+                            </target>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
         <resources>
             <resource>
@@ -62,6 +82,14 @@
     </repositories>
 
     <dependencies>
+        <dependency>
+            <!--This includes Javadocs for spigot - very useful for IntelliSense -->
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>1.21.1-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+            <classifier>javadoc</classifier>
+        </dependency>
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
