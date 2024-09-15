@@ -10,6 +10,19 @@ This is a sample Minecraft plugin for Spigot 1.21.1.  In it we cover multiple fe
     * Select `Maven`
     * Select `Java` version `21`
 4. Update your .gitignore file so you don't commit unnecessary files.
+5. Add a dependency for Spigot specifying JavaDocs.  This updates your IntelliSense to use the official documentation for Spigot API
+'''
+   <dependency>
+       <!--This includes Javadocs for spigot - very useful for IntelliSense -->
+       <groupId>org.spigotmc</groupId>
+       <artifactId>spigot-api</artifactId>
+       <version>1.21.1-R0.1-SNAPSHOT</version>
+       <scope>provided</scope>
+       <classifier>javadoc</classifier>
+   </dependency>
+'''
+6. Update your POM to copy your completed JAR file to the /plugins folder of your test server.
+7. To compile and copy over - run the maven command to `install`
 
 ## Features
 
@@ -33,3 +46,7 @@ Make a diamond sword called Frostbourne.  When you hit a living entity (that mea
 
 ### Story 7 - 50000 TRADEBOT
 Write unit tests for all previous tasks.  You will be surprised, those tests will protect us as we add more and more features.
+
+## References
+* https://bukkit.fandom.com/wiki/CraftBukkit_Commands
+* https://docs.papermc.io/paper/dev/plugin-yml
